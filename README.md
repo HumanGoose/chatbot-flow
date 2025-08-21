@@ -28,6 +28,14 @@ npm run dev
 ```
 
 ## Usage Guide
+<img width="2048" height="1017" alt="1" src="https://github.com/user-attachments/assets/a17ceea0-e0aa-48d8-89e6-b8f7f488382f" />
+
+
+
+
+
+<img width="2048" height="1017" alt="2" src="https://github.com/user-attachments/assets/69c12cfe-03ba-4946-ba04-922fab4364df" />
+
 
 ### Creating a Flow
 1. **Add Nodes**: Use the side panel to add new nodes
@@ -47,4 +55,4 @@ npm run dev
 - Flows with multiple exit points cannot be saved
 
 
-**Built with ❤️ by Prajwal**
+**Thanks :)**
