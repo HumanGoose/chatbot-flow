@@ -1,7 +1,7 @@
 import React from 'react';
 import { Handle } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import "./Node.css";
+import "./components.css";
 
 function AddButton({ icon, label, onClick }) {
   return (

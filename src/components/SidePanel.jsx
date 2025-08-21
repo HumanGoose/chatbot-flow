@@ -13,7 +13,7 @@ export default function SidePanel({
     <div style={{ width: '400px', padding: '10px', borderLeft: '1px solid #ddd' }}>
       {!selectedNode ? (
         <>
-          <AddButton icon="chat" label="Message" onClick={() => addNode('Message', 'Enter text message', 'chat', '#00bcd4', WhatsAppIcon)} />
+          <AddButton icon="chat" label="Message" onClick={() => addNode('Message', 'Enter text message', 'chat', '#b1f0c3', WhatsAppIcon)} />
         </>
       ) : (
         <>

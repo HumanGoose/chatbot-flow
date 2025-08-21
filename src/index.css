@@ -1,11 +1,21 @@
 html,
+body,
+#root {
+  height: 100%;
+}
+
+html,
 body {
   margin: 0;
   font-family: sans-serif;
 }
 
-#app {
-  width: 100vw;
-  height: 100vh;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  overflow: hidden;
 }
 
