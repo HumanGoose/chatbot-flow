@@ -92,33 +92,6 @@ export default function App() {
 
   const [toastState, setToastState] = useState({ open: false, message: '', variant: 'info' });
 
-  // autosave: load on mount
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem('bitespeed-flow');
-      if (raw) {
-        const { nodes: savedNodes, edges: savedEdges } = JSON.parse(raw);
-        if (Array.isArray(savedNodes) && Array.isArray(savedEdges)) {
-          setNodes(savedNodes);
-          setEdges(savedEdges);
-          // Don't restore nextNodeId - always start fresh
-        }
-      }
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  // autosave: save whenever nodes/edges change
-  useEffect(() => {
-    try {
-      const payload = JSON.stringify({ nodes, edges });
-      localStorage.setItem('bitespeed-flow', payload);
-    } catch {
-      // ignore
-    }
-  }, [nodes, edges]);
-
   const onNodesChange = useCallback(
     (changes) => setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
     [],
@@ -138,7 +111,7 @@ export default function App() {
       } else {
         setToastState({
           open: true,
-          message: 'Cannot add edge: only one outgoing edge allowed from a source handle.',
+          message: 'Cannot add edge: Only one outgoing edge allowed.',
           variant: 'warning',
         });
       }
@@ -207,7 +180,7 @@ export default function App() {
     if (nodesWithNoOutgoing.length > 1) {
       setToastState({
         open: true,
-        message: 'Save blocked: multiple nodes have no outgoing edges.',
+        message: 'Save Failed: multiple nodes have no outgoing edges.',
         variant: 'error',
       });
       return;
