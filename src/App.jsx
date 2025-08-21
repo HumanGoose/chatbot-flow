@@ -6,6 +6,7 @@ import { useCallback, useState, useEffect, useRef } from 'react';
 import NavBar from './components/NavBar.jsx';
 import Modal from './components/Modal.jsx';
 import Toast from './components/Toast.jsx';
+import WhatsAppIcon from './assets/whatsapp.png';
 
 const nodeTypes = {
   custom: CustomNode, 
@@ -22,7 +23,7 @@ const initialNodes = [
       content: 'Welcome! How can I help you today?', 
       typeIcon: 'chat', 
       color: '#b1f0c3', 
-      nodeIcon: '/src/assets/whatsapp.png' 
+      nodeIcon: WhatsAppIcon 
     },
   },
   {
@@ -34,7 +35,7 @@ const initialNodes = [
       content: 'Great! I can assist with that.', 
       typeIcon: 'chat', 
       color: '#b1f0c3', 
-      nodeIcon: '/src/assets/whatsapp.png' 
+      nodeIcon: WhatsAppIcon 
     },
   },
   {
@@ -46,7 +47,7 @@ const initialNodes = [
       content: 'Is there anything else you need?', 
       typeIcon: 'chat', 
       color: '#b1f0c3', 
-      nodeIcon: '/src/assets/whatsapp.png' 
+      nodeIcon: WhatsAppIcon 
     },
   },
 ];
