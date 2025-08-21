@@ -1,12 +1,50 @@
-# React + Vite
+# Bitespeed Chatbot Flow Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful, interactive chatbot flow builder built with React and modern web technologies. Design, visualize, and manage complex chatbot conversation flows with an intuitive interface.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What I Used
+- **React-Flow** - Professional node-based flow editor
+- **React** - Modern React with hooks and functional components
+- **Vite** - Lightning-fast build tool and dev server
 
-## Expanding the ESLint configuration
+## Try it out on your system
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js (version 22.18.0)
+- npm or yarn package manager
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/HumanGoose/chatbot-flow.git
+cd chatbot-flow
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## Usage Guide
+
+### Creating a Flow
+1. **Add Nodes**: Use the side panel to add new nodes
+2. **Connect Nodes**: Drag from node handles to create connections
+3. **Edit Content**: Click on nodes to edit message content
+4. **Position Nodes**: Drag nodes to arrange your flow layout
+
+### Managing Your Flow
+- **Save**: Use Ctrl+S or the save button to validate your flow
+- **Export**: Download your flow as JSON for backup or sharing
+- **Import**: Load previously saved flows from JSON files
+- **Delete**: Select nodes/edges and use the delete button
+
+### Flow Validation Rules
+- Only one node should have no outgoing connections (exit point)
+- All other nodes must have at least one outgoing connection
+- Flows with multiple exit points cannot be saved
+
+
+**Built with ❤️ using React, Vite, and @xyflow/react**
