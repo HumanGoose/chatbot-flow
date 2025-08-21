@@ -47,4 +47,4 @@ npm run dev
 - Flows with multiple exit points cannot be saved
 
 
-**Built with ❤️ using React, Vite, and @xyflow/react**
+**Built with ❤️ by Prajwal**
