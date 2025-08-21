@@ -14,7 +14,12 @@ function AddButton({ icon, label, onClick }) {
 
 const CustomNode = ({ data }) => {
   return (
-    <div className={`custom-node ${data.selected ? 'selected' : ''}`}>
+    <div className={`custom-node ${data.selected ? 'selected' : ''}`}
+      style={{
+        border: data.selected ? `2px solid ${data.color}` : '',
+        borderRadius: '5px',
+      }}
+    >
       <Handle type="source" position="right" />
       <Handle type="target" position="left" />
 
