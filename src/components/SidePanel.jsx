@@ -10,7 +10,17 @@ export default function SidePanel({
   addNode,
 }) {
   return (
-    <div style={{ width: '400px', padding: '10px', borderLeft: '1px solid #ddd' }}>
+    <div 
+      className="side-panel"
+      style={{ 
+        width: '100%', 
+        maxWidth: '400px', 
+        minWidth: '300px',
+        padding: '10px', 
+        borderLeft: '1px solid #ddd',
+        backgroundColor: '#fafafa'
+      }}
+    >
       {!selectedNode ? (
         <>
           <AddButton icon="chat" label="Message" onClick={() => addNode('Message', 'Enter text message', 'chat', '#b1f0c3', WhatsAppIcon)} />

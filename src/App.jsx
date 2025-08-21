@@ -73,6 +73,7 @@ export default function App() {
   const [selectedNode, setSelectedNode] = useState(null);
   const [selectedEdgeId, setSelectedEdgeId] = useState(null);
   const [tempContent, setTempContent] = useState('');
+  const [isCoarsePointer, setIsCoarsePointer] = useState(false);
   const nextNodeIdRef = useRef(
     initialNodes.length
       ? Math.max(
@@ -92,6 +93,23 @@ export default function App() {
   });
 
   const [toastState, setToastState] = useState({ open: false, message: '', variant: 'info' });
+
+  // Detect touch / coarse pointer devices to optimize interactions for mobile
+  useEffect(() => {
+    try {
+      const mql = window.matchMedia('(pointer: coarse)');
+      setIsCoarsePointer(Boolean(mql?.matches));
+      const handler = (e) => setIsCoarsePointer(Boolean(e.matches));
+      if (mql?.addEventListener) mql.addEventListener('change', handler);
+      else if (mql?.addListener) mql.addListener(handler);
+      return () => {
+        if (mql?.removeEventListener) mql.removeEventListener('change', handler);
+        else if (mql?.removeListener) mql.removeListener(handler);
+      };
+    } catch {
+      // noop
+    }
+  }, []);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
@@ -246,8 +264,13 @@ export default function App() {
         onImport={handleImport}
         onExport={handleExport}
       />
-      <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
-        <div style={{ flex: 1, minWidth: 0 }}>
+      <div style={{ 
+        display: 'flex', 
+        flex: 1, 
+        minHeight: 0,
+        flexDirection: 'row'
+      }} className="main-layout">
+        <div style={{ flex: 1, minWidth: 0 }} className="flow-container">
           <div style={{ width: '100%', height: '100%' }}>
             <ReactFlow
               nodes={nodes.map((node) => ({
@@ -267,6 +290,12 @@ export default function App() {
               onPaneClick={onPaneClick}
               onEdgeClick={onEdgeClick}
               nodeTypes={nodeTypes}
+              panOnDrag
+              selectionOnDrag={false}
+              zoomOnPinch
+              nodesDraggable={!isCoarsePointer}
+              nodesConnectable={!isCoarsePointer}
+              elementsSelectable={!isCoarsePointer}
               fitView
             >
               <MiniMap />
