@@ -1,6 +1,6 @@
 # Bitespeed Chatbot Flow Builder
 
-A powerful, interactive chatbot flow builder built with React and modern web technologies. Design, visualize, and manage complex chatbot conversation flows with an intuitive interface.
+Design, visualize, and manage complex chatbot conversation flows with an intuitive interface.
 
 
 ## Live Demo
